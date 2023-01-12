@@ -1,0 +1,7 @@
+---
+
+instance_name: mirror_instance1
+input_intf_name: ge-0/0/1
+output_intf_name: ge-0/0/0
+input_rate: 1
+run_length: 10

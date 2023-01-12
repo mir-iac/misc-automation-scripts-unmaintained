@@ -1,0 +1,24 @@
+
+forwarding-options {
+	port-mirroring {
+	    instance {
+	        {{ config['instance_name'] }} {
+	            input {
+	                rate {{ config['input_rate'] }};
+	                run-length {{ config['run_length'] }};
+	            }
+	            family any {
+	                output {
+	                    interface {{ config['output_intf_name'] }};
+	                }
+	            }
+	        }
+	    }
+	}
+}
+
+interfaces {
+    {{ config['input_intf_name'] }} {
+        port-mirror-instance mirror_instance1;
+    }
+}
